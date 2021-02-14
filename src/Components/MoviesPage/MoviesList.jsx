@@ -1,13 +1,13 @@
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import StyledMoviesList from "./MoviesListStyled";
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import StyledMoviesList from './MoviesListStyled';
 
 const MoviesList = ({ movies }) => {
   return (
     <StyledMoviesList>
       {movies ? (
         movies.length ? (
-          movies.map((movie) => (
+          movies.map(movie => (
             <li key={movie.id}>
               <Link to={`/movies/${movie.id}`} className="Link">
                 {movie.original_title}

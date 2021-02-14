@@ -1,6 +1,6 @@
-import { Component } from "react";
-import fetchMovies from "../../Utils/fetchMovies";
-import StyledReviews from "./ReviewsStyled";
+import { Component } from 'react';
+import fetchMovies from '../../Utils/fetchMovies';
+import StyledReviews from './ReviewsStyled';
 
 const myFetchMovie = new fetchMovies();
 
@@ -15,12 +15,12 @@ export default class Reviews extends Component {
 
   options = {
     movie: this.props.match.params.movieId,
-    type: "movie",
-    extra: "/reviews",
+    type: 'movie',
+    extra: '/reviews',
   };
 
   componentDidMount() {
-    myFetchMovie.fetchResult(this.options).then((result) => {
+    myFetchMovie.fetchResult(this.options).then(result => {
       result && this.setState({ reviews: result.results });
     });
   }
@@ -30,7 +30,7 @@ export default class Reviews extends Component {
     return (
       <StyledReviews>
         {reviews.length ? (
-          reviews.map((review) => (
+          reviews.map(review => (
             <li key={review.id}>
               <h4>Author: {review.author}</h4>
               <p>{review.content}</p>

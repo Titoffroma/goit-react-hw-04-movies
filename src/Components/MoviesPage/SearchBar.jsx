@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import StyledSearchBar from "./SearchBarStyled";
+import PropTypes from 'prop-types';
+import StyledSearchBar from './SearchBarStyled';
 
 const SearchBar = ({ onSubmit }) => {
   return (

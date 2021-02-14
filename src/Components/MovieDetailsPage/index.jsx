@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { Component } from "react";
-import fetchMovies from "../../Utils/fetchMovies";
-import StyledMovieDetails from "./MoviesDetailsStyled";
-import StyledDetailsLinks from "./DetailsLinksStyled";
+import { Link } from 'react-router-dom';
+import { Component } from 'react';
+import fetchMovies from '../../Utils/fetchMovies';
+import StyledMovieDetails from './MoviesDetailsStyled';
+import StyledDetailsLinks from './DetailsLinksStyled';
 
 const myFetchMovie = new fetchMovies();
 
@@ -17,11 +17,11 @@ export default class MovieDetailsPage extends Component {
 
   options = {
     movie: this.props.match.params.movieId,
-    type: "movie",
+    type: 'movie',
   };
 
   componentDidMount() {
-    myFetchMovie.fetchResult(this.options).then((result) => {
+    myFetchMovie.fetchResult(this.options).then(result => {
       result && this.setState({ movie: result });
     });
   }
@@ -37,11 +37,11 @@ export default class MovieDetailsPage extends Component {
         release_date,
       } = this.state.movie;
 
-      const path = "https://www.themoviedb.org/t/p/";
-      const thmb = "w300_and_h450_bestv2";
-      const lrg = "w600_and_h900_bestv2";
+      const path = 'https://www.themoviedb.org/t/p/';
+      const thmb = 'w300_and_h450_bestv2';
+      const lrg = 'w600_and_h900_bestv2';
       const alt =
-        "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-4-user-grey-d8fe957375e70239d6abdd549fd7568c89281b2179b5f4470e2e12895792dfa5.svg";
+        'https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-4-user-grey-d8fe957375e70239d6abdd549fd7568c89281b2179b5f4470e2e12895792dfa5.svg';
       const year = release_date.slice(0, 4);
 
       return (
@@ -62,7 +62,7 @@ export default class MovieDetailsPage extends Component {
               <h3>Genres</h3>
               <ul className="GenreList">
                 {genres.length
-                  ? genres.map((genre) => (
+                  ? genres.map(genre => (
                       <li className="GenreItem" key={genre.id}>
                         {genre.name}
                       </li>

@@ -1,12 +1,12 @@
-import PropTypes from "prop-types";
-import StyledCastItem from "./CastItemStyled";
+import PropTypes from 'prop-types';
+import StyledCastItem from './CastItemStyled';
 
 const CastItem = ({ img, name, role }) => {
-  const path = "https://www.themoviedb.org/t/p/";
-  const thmb = "w220_and_h330_face";
-  const lrg = "w440_and_h660_face";
+  const path = 'https://www.themoviedb.org/t/p/';
+  const thmb = 'w220_and_h330_face';
+  const lrg = 'w440_and_h660_face';
   const alt =
-    "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-4-user-grey-d8fe957375e70239d6abdd549fd7568c89281b2179b5f4470e2e12895792dfa5.svg";
+    'https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-4-user-grey-d8fe957375e70239d6abdd549fd7568c89281b2179b5f4470e2e12895792dfa5.svg';
 
   return (
     <StyledCastItem>

@@ -1,38 +1,38 @@
-import React, { lazy, Suspense } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { Header } from "../Header";
+import React, { lazy, Suspense } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { Header } from '../Header';
 
-const HomePage = lazy(() => import("../HomePage"));
-const MoviesPage = lazy(() => import("../MoviesPage"));
-const MovieDetailsPage = lazy(() => import("../MovieDetailsPage"));
-const Cast = lazy(() => import("../Cast"));
-const Reviews = lazy(() => import("../Reviews"));
+const HomePage = lazy(() => import('../HomePage'));
+const MoviesPage = lazy(() => import('../MoviesPage'));
+const MovieDetailsPage = lazy(() => import('../MovieDetailsPage'));
+const Cast = lazy(() => import('../Cast'));
+const Reviews = lazy(() => import('../Reviews'));
 
-const AsyncHomePage = (props) => (
+const AsyncHomePage = props => (
   <Suspense fallback={<div>Loading...</div>}>
     <HomePage {...props} />
   </Suspense>
 );
 
-const AsyncMoviesPage = (props) => (
+const AsyncMoviesPage = props => (
   <Suspense fallback={<div>Loading...</div>}>
     <MoviesPage {...props} />
   </Suspense>
 );
 
-const AsyncMovieDetailsPage = (props) => (
+const AsyncMovieDetailsPage = props => (
   <Suspense fallback={<div>Loading...</div>}>
     <MovieDetailsPage {...props} />
   </Suspense>
 );
 
-const AsyncCast = (props) => (
+const AsyncCast = props => (
   <Suspense fallback={<div>Loading...</div>}>
     <Cast {...props} />
   </Suspense>
 );
 
-const AsyncReviews = (props) => (
+const AsyncReviews = props => (
   <Suspense fallback={<div>Loading...</div>}>
     <Reviews {...props} />
   </Suspense>

@@ -1,6 +1,6 @@
-import { Component } from "react";
-import fetchMovies from "../../Utils/fetchMovies";
-import { MoviesList } from "../MoviesPage/MoviesList";
+import { Component } from 'react';
+import fetchMovies from '../../Utils/fetchMovies';
+import { MoviesList } from '../MoviesPage/MoviesList';
 
 const myFetchMovie = new fetchMovies();
 
@@ -14,7 +14,7 @@ export default class HomePage extends Component {
   };
 
   componentDidMount() {
-    myFetchMovie.fetchResult({}).then((response) => {
+    myFetchMovie.fetchResult({}).then(response => {
       if (response) {
         this.setState({ movies: response.results });
       }
