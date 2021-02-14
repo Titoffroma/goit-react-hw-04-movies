@@ -2,6 +2,7 @@
 import { Component } from "react";
 import { CastItem } from "./CastItem";
 import fetchMovies from "../../Utils/fetchMovies";
+import StyledCastList from "./CastListStyled";
 
 const myFetchMovie = new fetchMovies();
 
@@ -29,7 +30,7 @@ export default class Cast extends Component {
   render() {
     const { cast } = this.state;
     return (
-      <ul className="ImageGallery">
+      <StyledCastList>
         {cast &&
           cast.map((actor) => (
             <CastItem
@@ -39,7 +40,7 @@ export default class Cast extends Component {
               role={actor.character}
             />
           ))}
-      </ul>
+      </StyledCastList>
     );
   }
 }

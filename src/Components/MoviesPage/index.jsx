@@ -11,11 +11,13 @@ export default class MoviesPage extends Component {
   }
 
   state = {
-    movies: [],
+    movies: null,
   };
 
   handleSearch = (e) => {
     e.preventDefault();
+    const query = e.target.elements.search.value;
+    if (!query.length) return;
     const options = {
       type: "search",
       query: e.target.elements.search.value,
@@ -37,7 +39,6 @@ export default class MoviesPage extends Component {
 
   componentDidMount() {
     const { location } = this.props;
-    console.log(location);
     if (location.search) {
       const options = {
         type: "search",

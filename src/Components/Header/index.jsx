@@ -4,7 +4,7 @@ import StyledHeader from "./HeaderStyled";
 const Header = () => {
   return (
     <StyledHeader className="Header">
-      <NavLink to="/home" activeClassName="ActiveLink">
+      <NavLink exact to="/" activeClassName="ActiveLink">
         Home
       </NavLink>
       <NavLink to="/movies" activeClassName="ActiveLink">

@@ -42,18 +42,14 @@ function App() {
   return (
     <>
       <Header />
-      <Route exact path="/home" component={AsyncHomePage} />
-      <Route exact path="/movies" component={AsyncMoviesPage} />
-      <Route path="/movies/:movieId" component={AsyncMovieDetailsPage} />
+      <Switch>
+        <Route exact path="/" component={AsyncHomePage} />
+        <Route exact path="/movies" component={AsyncMoviesPage} />
+        <Route path="/movies/:movieId" component={AsyncMovieDetailsPage} />
+        <Redirect to="/" />
+      </Switch>
       <Route path="/movies/:movieId/cast" component={AsyncCast} />
       <Route path="/movies/:movieId/reviews" component={AsyncReviews} />
-      <Redirect to="/home" />
-      {/* <Route exact path="/" component={HomePage} />
-        <Route path="/movies" component={MoviesPage} />
-        <Route path="/movies/:movieId" component={MovieDetailsPage} />
-        <Route path="/movies/:movieId/cast" component={Cast} />
-        <Route path="/movies/:movieId/reviews" component={Reviews} />
-        <Redirect to="/" /> */}
     </>
   );
 }

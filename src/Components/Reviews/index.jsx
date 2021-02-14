@@ -1,6 +1,6 @@
 import { Component } from "react";
-// import { CastItem } from "./CastItem";
 import fetchMovies from "../../Utils/fetchMovies";
+import StyledReviews from "./ReviewsStyled";
 
 const myFetchMovie = new fetchMovies();
 
@@ -28,7 +28,7 @@ export default class Reviews extends Component {
   render() {
     const { reviews } = this.state;
     return (
-      <ul className="ImageGallery">
+      <StyledReviews>
         {reviews.length ? (
           reviews.map((review) => (
             <li key={review.id}>
@@ -39,7 +39,7 @@ export default class Reviews extends Component {
         ) : (
           <div>No reviews found</div>
         )}
-      </ul>
+      </StyledReviews>
     );
   }
 }
